@@ -11,6 +11,10 @@ terraform {
 }
 
 module "ami" {
-  source    = "github.com/raghudevopsb65/immutable-app-ami"
-  COMPONENT = "cart"
+  source      = "github.com/raghudevopsb65/immutable-app-ami"
+  COMPONENT   = "cart"
+  APP_VERSION = var.APP_VERSION
 }
+
+variable "APP_VERSION" {}
+
