@@ -7,7 +7,7 @@ steps:
 - script: npm install
   displayName: 'Download NodeJS Dependencies'
 
-- script: docker build cart .
+- script: docker build -t cart .
   displayName: 'Docker Build'
 
 
