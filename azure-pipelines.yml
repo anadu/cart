@@ -3,15 +3,23 @@ trigger:
 
 pool: D65
 
-steps:
-- script: npm install
-  displayName: 'Download NodeJS Dependencies'
+stages:
+- stage: CI
+  jobs:
+  - job: CI
+    steps:
+    - script: npm install
+      displayName: Downlaod NodeJS Dependencies
+    - script: docker build -t cart .
+      displayName: Docker Build
 
-- script: docker build -t cart .
-  displayName: 'Docker Build'
+- stage: DockerUpload
+  jobs:
+  - job: DockerUpload
+    steps:
+    - script: |
+        aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 633788536644.dkr.ecr.us-east-1.amazonaws.com
+        docker tag catalogue:latest 633788536644.dkr.ecr.us-east-1.amazonaws.com/catalogue:latest
+        docker push 633788536644.dkr.ecr.us-east-1.amazonaws.com/catalogue:latest
+      displayName: Docker Image Push to ECR
 
-- script: |
-    aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 633788536644.dkr.ecr.us-east-1.amazonaws.com
-    docker tag cart:latest 633788536644.dkr.ecr.us-east-1.amazonaws.com/cart:latest
-    docker push 633788536644.dkr.ecr.us-east-1.amazonaws.com/cart:latest
-  displayName: 'Docker Push Image to ECR'
