@@ -15,5 +15,5 @@ resources:
       endpoint: raghudevopsb65
 
 stages:
-- template: nodejs.yml
+- template: nodejs.yml@templates
 
