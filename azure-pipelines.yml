@@ -12,6 +12,7 @@ resources:
     - repository: templates
       type: github
       name: raghudevopsb65/roboshop-azure-devops-templates
+      endpoint: raghudevopsb65
 
 stages:
 - template: nodejs.yml
