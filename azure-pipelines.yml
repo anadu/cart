@@ -1,0 +1,10 @@
+trigger:
+- main
+
+pool: D65
+
+steps:
+- script: hostname
+  displayName: 'Run a one-line script'
+
+
