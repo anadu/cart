@@ -10,4 +10,8 @@ steps:
 - script: docker build -t cart .
   displayName: 'Docker Build'
 
-
+- script: |
+    aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 633788536644.dkr.ecr.us-east-1.amazonaws.com
+    docker tag cart:latest 633788536644.dkr.ecr.us-east-1.amazonaws.com/cart:latest
+    docker push 633788536644.dkr.ecr.us-east-1.amazonaws.com/cart:latest
+  displayName: 'Docker Push Image to ECR'
