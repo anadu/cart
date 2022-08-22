@@ -1,4 +1,4 @@
-FROM      nodejs
+FROM      node
 RUN       useradd roboshop
 RUN       mkdir /app
 RUN       chown roboshop /app
