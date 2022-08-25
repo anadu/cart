@@ -11,4 +11,6 @@ configMap:
   data:
     REDIS_HOST: roboshop-prod-elasticache-cluster.ppugfs.0001.use1.cache.amazonaws.com
     CATALOGUE_HOST: catalogue
+    CATALOGUE_HOST: 8080
+
 
