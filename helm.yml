@@ -13,4 +13,6 @@ configMap:
     CATALOGUE_HOST: catalogue
     CATALOGUE_PORT: "8080"
 
+externalSecret:
+  enabled: false
 
