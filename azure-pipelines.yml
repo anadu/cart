@@ -5,12 +5,13 @@ trigger:
   branches:
     exclude:
     - main
+  tags:
+      include: [ "*" ]
 
 pool: D65
 
 variables:
   COMPONENT: cart
-
 
 resources:
   repositories:
