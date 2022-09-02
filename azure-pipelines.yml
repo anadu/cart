@@ -1,14 +1,10 @@
 #trigger:
 #- main
 
-trigger:
-  branches:
-    exclude:
-    - main
-  tags:
-      include: [ "*" ]
 
-pool: D65
+
+pool:
+    vmImage: 'ubuntu-latest'
 
 variables:
   COMPONENT: cart
