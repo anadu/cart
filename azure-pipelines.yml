@@ -14,7 +14,7 @@ resources:
     - repository: templates
       type: github
       name: anadu/roboshop-azure-devops-templates
-      endpoint: raghudevopsb65
+      endpoint: anadu
 
 stages:
 - template: nodejs.yml@templates
