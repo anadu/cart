@@ -5,7 +5,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 stages:
-- stage: CI thinks
+- stage: CIthinks
   jobs:
   - job: CIWork
     steps:
@@ -13,7 +13,7 @@ stages:
         npm install
       displayName: Download dependinces
 
-- stage: build and push docker image
+- stage: buildpush
   jobs:
   - job: TestWork
     steps:
