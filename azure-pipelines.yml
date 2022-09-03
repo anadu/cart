@@ -9,6 +9,12 @@ steps:
   
   - script: docker build -t 000100000/cartnew .
     displayName: building docker image
+stages:    
+- task: Docker@2
+  inputs:
+    containerRegistry: 'docker_registry'
+    repository: '000100000 /cartnew'
+    command: Push'
     
 
 
