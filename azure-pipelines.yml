@@ -11,9 +11,9 @@ steps:
     displayName: building docker image
        
  - task: Docker@2
-  inputs:
+   inputs:
     containerRegistry: 'docker_registry'
-    repository: '000100000 /cartnew'
+    repository: '000100000/cartnew'
     command: Push'
     
 
