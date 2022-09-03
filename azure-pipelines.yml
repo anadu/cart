@@ -1,9 +1,9 @@
-#trigger:
-#- main
+trigger:
+- main
 
 
 
-pool:
+pool: 
     vmImage: 'ubuntu-latest'
 
 variables:
@@ -18,4 +18,10 @@ resources:
 
 stages:
 - template: nodejs.yml@templates
+- task: Docker@2
+  inputs:
+    containerRegistry: 'docker registry'
+    repository: 'cart'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
 
