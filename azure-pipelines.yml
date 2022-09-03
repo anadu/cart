@@ -4,7 +4,8 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 steps:
-  - script: echo hello from Linux
+  - script: npm install
+    displayName: Download dependinces
 
 
 
