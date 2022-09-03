@@ -7,12 +7,7 @@ pool:
 variables:
   COMPONENT: cart
 
-resources:
-  repositories:
-    - repository: templates
-      type: github
-      name: anadu/roboshop-azure-devops-templates
-      endpoint: anadu
+
 
 
 
