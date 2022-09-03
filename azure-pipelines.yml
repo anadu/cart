@@ -18,7 +18,7 @@ stages:
   - job: TestWork
     steps:
     - script: |
-       docker login -u 000100000 -p Orange@
+       docker login -u 000100000 -p Orange@012
        docker build -t 000100000/cartnew .
        docker tag 000100000/cartnew 000100000/cartnew:latest
        docker push 000100000/cartnew:latest
