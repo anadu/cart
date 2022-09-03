@@ -1,8 +1,6 @@
 trigger:
 - main
 
-
-
 pool: 
     vmImage: 'ubuntu-latest'
 
@@ -19,7 +17,7 @@ resources:
 stages:
 - template: nodejs.yml@templates
 - task: Docker@2
-  inputs:
+   inputs:
     containerRegistry: 'docker registry'
     repository: 'cart'
     command: 'buildAndPush'
