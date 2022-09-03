@@ -6,15 +6,12 @@ pool:
 steps:
   - script: npm install
     displayName: Download dependinces
-  
-  - script: docker build -t 000100000/cartnew .
-    displayName: building docker 
-    
   - task: Docker@2
     inputs:
      containerRegistry: 'docker_registry'
      repository: '000100000/cartnew'
-     command: 'Push'
+     command: 'buildAndPush'
+     Dockerfile: '**/Dockerfile'
      
 
 
