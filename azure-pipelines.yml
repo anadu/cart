@@ -6,6 +6,10 @@ pool:
 steps:
   - script: npm install
     displayName: Download dependinces
+  
+  - script: docker build -t cart .
+    displayName: building docker image
+    
 
 
 
