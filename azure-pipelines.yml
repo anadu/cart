@@ -15,7 +15,7 @@ steps:
      containerRegistry: 'docker_registry'
      repository: '000100000/cartnew'
      command: 'Push'
-     Dockerfile: '**/Dockerfile'
+     
 
 
     
