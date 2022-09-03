@@ -11,11 +11,11 @@ stages:
     steps:
     - script:
         npm install
- - stage: second
-   jobs:
-   - job: secondjob
-   steps:
-   - script: echo supeer
+- stage: second
+  jobs:
+  - job: secondjob
+    steps:
+    - script: echo supeer
 
 
 
