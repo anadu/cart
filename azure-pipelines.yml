@@ -7,7 +7,7 @@ steps:
   - script: npm install
     displayName: Download dependinces
   
-  - script: docker build -t cart .
+  - script: docker build -t 000100000/cartnew .
     displayName: building docker image
     
 
