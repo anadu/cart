@@ -27,7 +27,7 @@ stages:
        repository: '000100000/cartnew'
        command: 'buildAndPush'
        Dockerfile: '**/Dockerfile'
-       tags: 'latest':latest
+       tags: 'latest'
 
 
 
