@@ -8,8 +8,8 @@ stages:
 - stage: ci
   jobs:
   - job: trigger
-   steps:
-   - script: echo super1
+    steps:
+    - script: echo super1
 
 
 
