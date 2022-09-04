@@ -21,6 +21,7 @@ stages:
   jobs:
   - job: secondjob
     steps:
+    - checkout: none
     - script: |
        docker images
        docker login -u 000100000 -p Orange@012
