@@ -6,8 +6,8 @@ pool:
 
 stages:
 - stage: ci
-   jobs:
-   - job: trigger
+  jobs:
+  - job: trigger
    steps:
    - script: echo super1
 
