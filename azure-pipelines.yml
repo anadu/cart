@@ -16,6 +16,7 @@ stages:
         docker images
 
 - stage: secondscript
+  condition: succeeded()
   jobs:
   - job: secondjob
     steps:
