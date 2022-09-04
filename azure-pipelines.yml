@@ -1,37 +1,14 @@
+
 trigger:
-- main 
-
-pool: 
+- main
+pool:
   vmImage: 'ubuntu-latest'
-
-stages:
-- stage: CI
-  jobs:
-  - job: CI
-    steps:
-    - script: env
-      displayName: env
-    - script: npm install
-      displayName: Downlaod NodeJS Dependencies
-    - script: docker build -t 000100000/cartnew .
-      displayName: Docker Build
-
-- stage: DockerUpload
-  condition: succeeded('CI')
-  jobs:
-  - job: DockerUpload
-    steps:
-    - task:
-      inputs:
-       containerRegistry: 'docker_registry'
-       repository: '000100000/cartnew'
-       command: 'buildAndPush'
-       Dockerfile: '**/Dockerfile'
-       tags: 'latest'
-
-
-
-
-
-
-
+steps:
+  - script: npm install
+    displayName: Download dependinces
+  - script: docker build -t 000100000/cartnew .
+    displayName: Building docker image
+  - script: |
+     docker login -u 000100000 -p Orange@012
+     docker tag 000100000/cartnew 000100000/cartnew:latest
+     docker push 000100000/cartnew:latest
