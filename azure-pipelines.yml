@@ -1,7 +1,7 @@
 trigger:
 - main 
 
-pool:
+pool: 
   vmImage: 'ubuntu-latest'
 
 stages:
@@ -9,12 +9,18 @@ stages:
   jobs:
   - job: trigger
     steps:
-    - script: echo super1
+    - script: |
+        npm install
+        docker build -t 000100000/cartnew .
+
 - stage: secondscript
   jobs:
   - job: secondjob
     steps:
-    - script: echo super2
+    - script: |
+       docker login -u 000100000 -p Orange@012
+       docker tag 000100000/cartnew 000100000/cartnew:latest
+       docker push 000100000/cartnew:latest
   displayName: ryder 
 
 
