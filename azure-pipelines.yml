@@ -17,9 +17,9 @@ stages:
 
 - stage: secondscript
   condition: succeeded()
+  dependson: trigger
   jobs:
   - job: secondjob
-    dependson: trigger
     steps:
     - script: |
        docker images
