@@ -17,7 +17,7 @@ stages:
 
 - stage: secondscript
   condition: succeeded()
-  dependsOn: trigger
+  dependsOn: ci
   jobs:
   - job: secondjob
     steps:
