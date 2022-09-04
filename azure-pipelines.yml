@@ -14,7 +14,7 @@ stages:
         ls -lrt
     - task: Docker@2
       inputs:
-      containerRegistry: 'docker_registry'
+       containerRegistry: 'docker_registry'
        repository: '000100000/cartnew'
        command: 'buildAndPush'
        Dockerfile: '**/Dockerfile'
