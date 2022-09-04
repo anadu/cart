@@ -12,18 +12,9 @@ stages:
     - script: |
         npm install
         ls -lrt
-        docker build -t 000100000/cartnew .
-        docker images
-
-- stage: Dockerupload
-  condition: succeeded()
-  dependsOn: ci
-  jobs:
-  - job: secondjob
-    steps:
-    - script: |
-       docker images
-       docker login -u 000100000 -p Orange@012
-       docker tag 000100000/cartnew 000100000/cartnew:latest
-       docker push 000100000/cartnew:latest
-  displayName: docker upload
+    - task: Docker@2
+      inputs:
+      containerRegistry: 'docker_registry'
+       repository: '000100000/cartnew'
+       command: 'buildAndPush'
+       Dockerfile: '**/Dockerfile'
