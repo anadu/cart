@@ -10,6 +10,13 @@ stages:
   - job: trigger
     steps:
     - script: echo super1
+- stage: secondscript
+  jobs:
+  - job: secondjob
+    steps:
+    - script: echo super2
+  displayName: ryder 
+
 
 
 
