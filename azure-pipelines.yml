@@ -4,23 +4,28 @@ trigger:
 pool: 
   vmImage: 'ubuntu-latest'
 
-stages:
+tages:
 - stage: CI
   jobs:
-  - job: CIWork
+  - job: CI
     steps:
+    - script: env
+      displayName: env
     - script: npm install
-      displayName: downloaddependnices
-	  - script: docker build -t 000100000/cartnew .
+      displayName: Downlaod NodeJS Dependencies
+    - script: docker build -t 000100000/cartnew .
+      displayName: Docker Build
 
-- stage: Test
+- stage: DockerUpload
+  condition: succeeded()
   jobs:
-  - job: TestWork
+  - job: DockerUpload
     steps:
     - script: |
-	     docker login -u 000100000 -p Orange@012
-       docker tag 000100000/cartnew 000100000/cartnew:latest
-       docker push 000100000/cartnew:latest
+        docker login -u 000100000 -p Orange@012
+        docker tag 000100000/cartnew 000100000/cartnew:latest
+        docker push 000100000/cartnew:latest
+      displayName: Docker Image Push to docker hub
 
 
 
