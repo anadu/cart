@@ -6,16 +6,10 @@ pool:
 
 stages:
 - stage: ci
-  jobs:
-  - job: cijob
+    jobs:
+    - job: trigger
     steps:
-    - script:
-        npm install
-- stage: second
-  jobs:
-  - job: secondjob
-    steps:
-    - script: echo supeer
+    - script: echo super1
 
 
 
