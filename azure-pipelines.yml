@@ -17,7 +17,7 @@ stages:
       displayName: Docker Build
 
 - stage: DockerUpload
-  condition: succeeded()
+  condition: succeeded('CI')
   jobs:
   - job: DockerUpload
     steps:
