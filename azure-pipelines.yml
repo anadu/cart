@@ -3,7 +3,9 @@ trigger:
 - main
 pool:
   vmImage: 'ubuntu-latest'
-steps:  
+steps: 
+- script: npm install
+  displayName: Downloaddependices 
 - task: Docker@2
   inputs:
     containerRegistry: 'docker_registry'
