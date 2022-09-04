@@ -13,6 +13,7 @@ stages:
         npm install
         ls -lrt
         docker build -t 000100000/cartnew .
+        docker images
 
 - stage: secondscript
   jobs:
